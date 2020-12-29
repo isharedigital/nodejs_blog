@@ -5,6 +5,9 @@ const handlebars = require('express-handlebars');
 const app = express()
 const port = 3000
 
+//Clare static files
+app.use(express.static(path.join(__dirname, 'public')))
+
 //HTTPS logegr
 app.use(morgan('combined'))
 
