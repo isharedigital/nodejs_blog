@@ -5,6 +5,12 @@ const handlebars = require('express-handlebars');
 const app = express()
 const port = 3000
 
+//urlencoder
+app.use(express.urlencoded({
+  extended: false
+}))
+app.use(express.json())
+
 //Clare static files
 app.use(express.static(path.join(__dirname, 'public')))
 
@@ -27,6 +33,15 @@ app.get('/', (req, res) => {
 
 app.get('/news', (req, res) => {
   res.render('news')
+})
+
+app.get('/search', (req, res) => {
+  res.render('search')
+})
+
+app.post('/search', (req, res) => {
+  console.log(req.body);
+  res.render('search')
 })
 
 app.listen(port, () => {
