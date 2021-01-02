@@ -1,4 +1,4 @@
-const newsRouter = require('./news.js')
+const newsRouter = require('./news.router.js')
 const siteRouter = require('./site.js')
 
 function router(app) {

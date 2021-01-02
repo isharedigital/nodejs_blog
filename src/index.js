@@ -5,8 +5,11 @@ const handlebars = require('express-handlebars');
 const app = express()
 const port = 3000
 
-//Require router
 const router = require('./routes')
+const db = require('./config/db')
+
+//Connect to db
+db.connect();
 
 //urlencoder
 app.use(express.urlencoded({
